@@ -83,6 +83,7 @@ const Layout = () => {
 								<StyledGameTitle>Rock, Paper, Scissors</StyledGameTitle>
 							</StyledGameCont>
 						</Link>
+						<StyledSeparator />
 						<Link to='/play/wordle'>
 							<StyledGameCont>
 								<StyledImgCont>

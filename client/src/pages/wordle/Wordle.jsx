@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import data from '../../data/db.json';
 import {
+	GameGrid,
+	StyledContainer,
 	StyledGameContainer,
 	StyledLogoCont,
 	StyledLogoImg,
-	StyledLogoTitle,
-	StyledWord,
-	StyledWordCont
+	StyledLogoTitle
 } from './styles';
 import Row from '../../components/row/Row';
 import Keypad from '../../components/keypad/Keypad';
@@ -159,22 +159,26 @@ const WordleGame = () => {
 
 	return (
 		<>
-			<StyledGameContainer>
-				<StyledLogoCont>
-					<StyledLogoImg src='/images/wordle-icon.svg' />
-					<StyledLogoTitle>Wordle</StyledLogoTitle>
-				</StyledLogoCont>
-				{guesses.map((g, i) => {
-					if (turn === i) {
-						return <Row key={i} currentGuess={currentGuess} />;
-					}
-					return <Row key={i} guess={g} />;
-				})}
-				<Keypad usedKeys={usedKeys} />
-				{showModal && (
-					<Modal isCorrect={isCorrect} turn={turn} solution={solution} />
-				)}
-			</StyledGameContainer>
+			<StyledContainer>
+				<StyledGameContainer>
+					<StyledLogoCont>
+						<StyledLogoImg src='/images/wordle-icon.svg' />
+						<StyledLogoTitle>Wordle</StyledLogoTitle>
+					</StyledLogoCont>
+					<GameGrid>
+						{guesses.map((g, i) => {
+							if (turn === i) {
+								return <Row key={i} currentGuess={currentGuess} />;
+							}
+							return <Row key={i} guess={g} />;
+						})}
+						<Keypad usedKeys={usedKeys} />
+						{showModal && (
+							<Modal isCorrect={isCorrect} turn={turn} solution={solution} />
+						)}
+					</GameGrid>
+				</StyledGameContainer>
+			</StyledContainer>
 		</>
 	);
 };

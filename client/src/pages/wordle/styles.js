@@ -1,12 +1,24 @@
 import { styled } from "styled-components";
 
-const StyledGameContainer = styled.div`
+const StyledContainer = styled.div`
     width: 100%;
+    background-image: url('../../../images/wordlebackground.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+`;
+
+const StyledGameContainer = styled.div`
+    width: 55%;
+    height: 97%;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid black;
     border-radius: 20px;
     position: relative;
 `;
@@ -17,7 +29,7 @@ const StyledLogoCont = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
-    top: -30px;
+    top: -40px;
 `;
 
 const StyledLogoImg = styled.img`
@@ -46,5 +58,10 @@ const StyledWord = styled.h1`
     letter-spacing: 3px;
 `;
 
+const GameGrid = styled.div`
+    position: relative;
+    top: -20px;
+`;
 
-export {StyledGameContainer, StyledLogoCont, StyledLogoImg, StyledLogoTitle, StyledWordCont, StyledWord}
+
+export {StyledContainer, StyledGameContainer, StyledLogoCont, StyledLogoImg, StyledLogoTitle, StyledWordCont, StyledWord, GameGrid}
