@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout';
 import SpaceInvaders from '../pages/spaceinvaders/SpaceInvaders';
 import ChooseGame from '../pages/choosegame/ChooseGame';
 import RockPaper from '../pages/rockpaper/RockPaper';
+import Wordle from '../pages/wordle/Wordle';
 
 const Router = () => {
 	return (
@@ -12,6 +13,7 @@ const Router = () => {
 				<Route index element={<ChooseGame />} />
 				<Route path='/play/space-invaders' element={<SpaceInvaders />} />
 				<Route path='/play/rock-paper-scissors' element={<RockPaper />} />
+				<Route path='/play/wordle' element={<Wordle />} />
 			</Route>
 		</Routes>
 	);

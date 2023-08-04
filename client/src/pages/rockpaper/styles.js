@@ -89,11 +89,15 @@ const PlayerInfo = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
 `;
 
 const StyledPlayerCont = styled.div`
 
+`;
+
+const VersusImg = styled.img`
+    width: 50px;
 `;
 
 const StyledPlayerPick = styled.h2`
@@ -196,4 +200,4 @@ const StyledScoreNumber = styled.h2`
     margin: 0;
 `;
 
-export {Container, GameContainer, PlayerContainer, PlayerImg, PlayerImg2, ComputerContainer, BoardContainer, GameLogo, PlayerInfo, StyledPlayerCont, StyledPlayerPick, StyledPlayer, PlayerTitle, ButtonDiv, Button, PickImg,StyledWinner, StyledScoreTxt, StyledScoreNumber}
+export {Container, GameContainer, PlayerContainer, PlayerImg, PlayerImg2, ComputerContainer, BoardContainer, GameLogo, PlayerInfo, StyledPlayerCont, VersusImg, StyledPlayerPick, StyledPlayer, PlayerTitle, ButtonDiv, Button, PickImg,StyledWinner, StyledScoreTxt, StyledScoreNumber}

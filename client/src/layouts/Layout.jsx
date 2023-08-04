@@ -34,7 +34,7 @@ const Layout = () => {
 				<StyledLogoDiv>
 					<Link to='/'>
 						<StyledLogoCont>
-							<StyledLogo src='./images/logogg2.png' />
+							<StyledLogo src='/images/logogg2.png' />
 						</StyledLogoCont>
 					</Link>
 					<StyledPacs>
@@ -43,12 +43,12 @@ const Layout = () => {
 						<StyledDot></StyledDot>
 						<StyledDot></StyledDot>
 						<StyledDot></StyledDot>
-						<StyledClyde src='./images/inky.png' />
-						<StyledClyde src='./images/clyde.png' />
+						<StyledClyde src='/images/inky.png' />
+						<StyledClyde src='/images/clyde.png' />
 					</StyledPacs>
 				</StyledLogoDiv>
 				<StyledJoystickCont>
-					<StyledJoystick src='./images/yellowarcade.png' />
+					<StyledJoystick src='/images/yellowarcade.png' />
 				</StyledJoystickCont>
 				<StyledUl>
 					<StyledLi>Home</StyledLi>
@@ -60,7 +60,7 @@ const Layout = () => {
 			<StyledContainer>
 				<StyledGameBar>
 					<StyledTitleCont>
-						<StyledTitlePac src='./images/pacman.png' />
+						<StyledTitlePac src='/images/pacman.png' />
 						<StyledTitleDot></StyledTitleDot>
 						<StyledTitle>GAMES</StyledTitle>
 					</StyledTitleCont>
@@ -68,7 +68,7 @@ const Layout = () => {
 						<Link to='/play/space-invaders'>
 							<StyledGameCont>
 								<StyledImgCont>
-									<StyledGameImg src='./images/spaceinvaders.png' />
+									<StyledGameImg src='/images/spaceinvaders.png' />
 								</StyledImgCont>
 
 								<StyledGameTitle>Space Invaders</StyledGameTitle>
@@ -78,9 +78,17 @@ const Layout = () => {
 						<Link to='/play/rock-paper-scissors'>
 							<StyledGameCont>
 								<StyledImgCont>
-									<StyledGameImg src='./images/scissors.png' />
+									<StyledGameImg src='/images/scissors.png' />
 								</StyledImgCont>
 								<StyledGameTitle>Rock, Paper, Scissors</StyledGameTitle>
+							</StyledGameCont>
+						</Link>
+						<Link to='/play/wordle'>
+							<StyledGameCont>
+								<StyledImgCont>
+									<StyledGameImg src='/images/wordlelogo.png' />
+								</StyledImgCont>
+								<StyledGameTitle>Wordle</StyledGameTitle>
 							</StyledGameCont>
 						</Link>
 					</StyledGameList>

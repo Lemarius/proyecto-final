@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
 	BoardContainer,
 	Button,
@@ -18,11 +18,9 @@ import {
 	StyledPlayerPick,
 	StyledScoreNumber,
 	StyledScoreTxt,
-	StyledWinner
+	StyledWinner,
+	VersusImg
 } from './styles';
-import rockImage from '../../../public/images/rock.png';
-import paperImage from '../../../public//images/paper.png';
-import scissorsImage from '../../../public/images/scissor.png';
 
 const RockPaper = () => {
 	const [playerAction, setPlayerAction] = useState('');
@@ -37,17 +35,17 @@ const RockPaper = () => {
 		rock: {
 			name: 'rock',
 			beats: 'scissors',
-			image: rockImage
+			image: 'images/rock.png'
 		},
 		paper: {
 			name: 'paper',
 			beats: 'rock',
-			image: paperImage
+			image: 'images/paper.png'
 		},
 		scissors: {
 			name: 'scissors',
 			beats: 'paper',
-			image: scissorsImage
+			image: 'images/scissors.png'
 		}
 	};
 
@@ -101,7 +99,7 @@ const RockPaper = () => {
 		<>
 			<Container>
 				<GameContainer>
-					<GameLogo src='../../images/rockpaperlogo3.png' />
+					<GameLogo src='/images/rockpaperlogo3.png' />
 					<PlayerContainer>
 						<PlayerTitle>Player</PlayerTitle>
 						<StyledScoreTxt>Score:</StyledScoreTxt>
@@ -111,12 +109,14 @@ const RockPaper = () => {
 					<BoardContainer>
 						<PlayerInfo>
 							<Players name='You' score={playerScore} action={playerAction} />
+							<VersusImg src='/images/versus.png' />
 							<Players
 								name='Computer'
 								score={computerScore}
 								action={computerAction}
 							/>
 						</PlayerInfo>
+
 						<ButtonDiv>
 							<ActionButton action='rock' onActionSelected={onActionSelected} />
 							<ActionButton
@@ -153,9 +153,9 @@ const Players = ({ name, action }) => {
 
 const ActionIcon = ({ action }) => {
 	const icons = {
-		rock: rockImage,
-		paper: paperImage,
-		scissors: scissorsImage
+		rock: '/images/rock.png',
+		paper: '/images/paper.png',
+		scissors: '/images/scissor.png'
 	};
 
 	const imageSrc = icons[action];
