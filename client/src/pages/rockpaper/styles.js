@@ -11,6 +11,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.6);
     
 `;
 

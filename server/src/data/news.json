@@ -1,0 +1,62 @@
+[
+  {
+    "newsId": 1,
+    "src": "/images/news1.jpg",
+    "title": "Noticia 1",
+    "description": "Párrafo dedicado a la explicación de la noticia 1"
+  },
+  {
+    "newsId": 2,
+    "src": "/images/news1.jpg",
+    "title": "Noticia 2",
+    "description": "Párrafo dedicado a la explicación de la noticia 2"
+  },
+  {
+    "newsId": 3,
+    "src": "/images/news1.jpg",
+    "title": "Noticia 3",
+    "description": "Párrafo dedicado a la explicación de la noticia 3"
+  },
+  {
+    "newsId": 4,
+    "src": "/images/news1.jpg",
+    "title": "Noticia 4",
+    "description": "Párrafo dedicado a la explicación de la noticia 4"
+  },
+  {
+    "newsId": 5,
+    "src": "/images/news1.jpg",
+    "title": "Noticia 5",
+    "description": "Párrafo dedicado a la explicación de la noticia 5"
+  },
+  {
+    "newsId": 6,
+    "src": "/images/news1.jpg",
+    "title": "Noticia 6",
+    "description": "Párrafo dedicado a la explicación de la noticia 6"
+  },
+  {
+    "newsId": 7,
+    "src": "/images/news1.jpg",
+    "title": "Noticia 7",
+    "description": "Párrafo dedicado a la explicación de la noticia 7"
+  },
+  {
+    "userId": "833a7deb-6c54-4cb1-8095-20874fae7fc2",
+    "src": "/images/news1.jpg",
+    "title": "Noticia Creada",
+    "description": "Párrafo de la noticia creada"
+  },
+  {
+    "userId": "ff212161-ffcf-4b17-8c1a-28db5cfd0006",
+    "src": "/images/news1.jpg",
+    "title": "Noticia creada 2",
+    "description": " Párrafo de la noticia creada 2"
+  },
+  {
+    "userId": "9c5da8e0-ce89-46ed-aa7b-0f8b3409646c",
+    "src": "/images/news1.jpg",
+    "title": "dkoaijdfias",
+    "description": "asdasfasf"
+  }
+]

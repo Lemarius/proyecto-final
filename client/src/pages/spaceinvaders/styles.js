@@ -12,6 +12,7 @@ const StyledContainer = styled.div`
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
+    box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.6);
 `;
  
 const StyledLogo = styled.img`
