@@ -8,6 +8,7 @@ const PostModel = require("../schemes/posts.scheme");
 controller.getNews = async (req, res) => {
   try {
     const allPosts = await PostModel.find();
+    console.log(typeof allPosts);
 
     res.send(allPosts);
   } catch (err) {
