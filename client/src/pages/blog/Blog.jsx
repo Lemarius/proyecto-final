@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import {
+	CreateContainer,
+	EditContainer,
 	StyledContainer,
 	StyledImg,
 	StyledImgCont,
 	StyledNews,
 	StyledNewsContainer,
+	StyledRowNews,
 	StyledTextCont,
 	StyledTextH1,
 	StyledTextP,
@@ -28,13 +31,11 @@ const Blog = () => {
 		fetchNews();
 	}, []);
 
-	console.log(posts);
-
 	return (
 		<>
 			<StyledContainer>
 				<StyledTitle>News Blog</StyledTitle>
-				<form id='form' onSubmit={e => handleSubmit(e, setPosts)}>
+				<CreateContainer id='form' onSubmit={e => handleSubmit(e, setPosts)}>
 					<label>Image: </label>
 					<input type='text' name='src' />
 
@@ -42,16 +43,16 @@ const Blog = () => {
 					<input type='text' name='title' />
 
 					<label>Description: </label>
-					<input type='text' name='description' />
+					<textarea type='text' name='description' />
 
-					<input type='submit' value='Create news' />
-				</form>
+					<input type='submit' value='Create post' />
+				</CreateContainer>
 				<StyledNewsContainer>
 					{posts.map(post => (
-						<StyledNews key={post.newsId}>
-							{editingPost && editingPost.newsId === post.newsId ? (
+						<StyledNews key={post._id}>
+							{editingPost && editingPost._id === post._id ? (
 								<>
-									<h3>
+									<EditContainer>
 										<input
 											type='text'
 											name='src'
@@ -70,18 +71,17 @@ const Blog = () => {
 											value={editingPost.description}
 											onChange={e => handleInputChange(e, setEditingPost)}
 										/>
-									</h3>
-
-									<button
-										onClick={() =>
-											handleUpdate(editingPost, setEditingPost, setPosts)
-										}
-									>
-										Save Changes
-									</button>
+										<button
+											onClick={() =>
+												handleUpdate(editingPost, setEditingPost, setPosts)
+											}
+										>
+											Save Changes
+										</button>
+									</EditContainer>
 								</>
 							) : (
-								<div key={post.newsId}>
+								<StyledRowNews key={post._id}>
 									<StyledImgCont>
 										<StyledImg src={post.src} />
 									</StyledImgCont>
@@ -92,10 +92,10 @@ const Blog = () => {
 									<button onClick={() => handleEdit(setEditingPost, post)}>
 										Edit post
 									</button>
-									<button onClick={() => deletePost(post.newsId, setPosts)}>
+									<button onClick={() => deletePost(post._id, setPosts)}>
 										Delete post
 									</button>
-								</div>
+								</StyledRowNews>
 							)}
 						</StyledNews>
 					))}
@@ -126,21 +126,20 @@ const handleSubmit = async (e, setPosts) => {
 
 const handleUpdate = async (editingPost, setEditingPost, setPosts) => {
 	try {
-		await fetch(`http://localhost:3000/api/users/${editingPost.newsId}`, {
-			method: 'PUT',
-			headers: {
-				Accept: '*/*',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(editingPost)
-		});
-
-		// Update the user in the local state
-		setPosts(prevPosts =>
-			prevPosts.map(post =>
-				post.newsId === editingPost.newsId ? editingPost : post
-			)
+		const response = await fetch(
+			`http://localhost:3000/api/news/${editingPost._id}`,
+			{
+				method: 'PATCH',
+				headers: {
+					Accept: '*/*',
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(editingPost)
+			}
 		);
+		const newPosts = await response.json();
+		// Update the user in the local state
+		setPosts(newPosts);
 
 		// Clear the editingUser state to exit the edit mode
 		setEditingPost(null);
@@ -159,10 +158,12 @@ const handleInputChange = (e, setEditingPost) => {
 
 const handleEdit = (setEditingPost, post) => {
 	setEditingPost(post);
+	console.log(post);
 };
 
 const deletePost = async (newsId, setPosts) => {
-	const response = await fetch(`http://localhost:3000/api/users/${newsId}`, {
+	console.log(newsId);
+	const response = await fetch(`http://localhost:3000/api/news/${newsId}`, {
 		method: 'DELETE'
 	});
 	const data = await response.json();

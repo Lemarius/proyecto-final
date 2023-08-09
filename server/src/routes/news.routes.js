@@ -6,7 +6,7 @@ newsRoutes.get('/', controller.getNews)
 
 newsRoutes.post('/createNews', controller.createNews)
 
-newsRoutes.put('/:newsId', controller.updateNews)
+newsRoutes.patch('/:newsId', controller.updateNews)
 
 newsRoutes.delete('/:newsId', controller.deleteNews)
 
